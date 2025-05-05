@@ -15,11 +15,12 @@ import os
 os.path.dirname(os.path.abspath(__file__))
 
 setup(
-    name="diff_gaussian_rasterization",
-    packages=['diff_gaussian_rasterization'],
+    name="diff_gaussian_rasterization_opacity",
+    packages=['diff_gaussian_rasterization_opacity'],
+    package_dir={'diff_gaussian_rasterization_opacity': 'diff-gaussian-rasterization-opacity'},  # 映射新包名到原目录
     ext_modules=[
         CUDAExtension(
-            name="diff_gaussian_rasterization._C",
+            name="diff_gaussian_rasterization_opacity._C",
             sources=[
             "cuda_rasterizer/rasterizer_impl.cu",
             "cuda_rasterizer/forward.cu",
